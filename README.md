@@ -1,61 +1,33 @@
-# proyecto_3_preprocesamiento
-Manipulación de datos (Data Wrangling) en streaming musical | Comparar preferencias y hábitos de escucha en 2 ciudades | Python | Pandas
+# 🎵 Music Streaming Behavior: Springfield vs. Shelbyville Analysis
 
-# Análisis de Preferencias Musicales: Springfield vs. Shelbyville
+## 🎯 Project Overview
+This project performs a comparative analysis of listening habits between two cities using streaming platform data. The primary focus was to validate behavioral hypotheses through advanced **Data Wrangling** and descriptive statistical analysis, transforming raw data into actionable insights for content strategy.
 
-## Resumen del Proyecto
-Este proyecto de análisis de datos tiene como objetivo comparar las preferencias musicales de los habitantes de dos ciudades, Springfield y Shelbyville, utilizando datos reales de un servicio de streaming de música. A través de un enfoque estructurado, se explora el conjunto de datos para extraer información valiosa que pueda ser utilizada para la toma de decisiones estratégicas.
+## 🧪 Business Hypothesis
+The study tested the following premise: *"User activity varies significantly depending on the day of the week and the specific geographical location."*
 
-## Objetivo
-La hipótesis principal a probar es la siguiente:
+## 🛠️ Tech Stack & Methodology
+* **Libraries:** Pandas (Dataframe manipulation), Matplotlib (Data Visualization).
+* **Data Wrangling Pipeline:**
+    * **Schema Standardization:** Refactored headers to consistent `snake_case` format.
+    * **Data Integrity:** Implemented imputation for missing values (`NaN` -> `unknown`) in critical dimensions (artist, genre, track).
+    * **Deduplication:** Removal of explicit duplicates and unification of implicit variants (e.g., merging 'hip', 'hop', and 'hip-hop' into a single genre).
 
-**"La actividad de los usuarios y las usuarias difiere según el día de la semana y dependiendo de la ciudad."**
 
-## Metodología de Análisis
-El proyecto se dividió en las siguientes etapas clave:
 
-### 1. Descripción de los datos
-- Inspección inicial del conjunto de datos
-- Identificación del tipo de información disponible
-- Revisión de la estructura de columnas
-- Detección de problemas en la calidad de datos (valores ausentes, inconsistencias)
+## 📊 Exploratory Data Analysis (EDA)
+The analysis was structured around three main pillars:
 
-### 2. Preprocesamiento de datos
-- **Estandarización de encabezados**:
-  - Corrección de nombres de columnas
-  - Estilo consistente (minúsculas, sin espacios, snake_case)
-  
-- **Manejo de valores ausentes**:
-  - Identificación y reemplazo de valores NaN
-  - Columnas afectadas: `track`, `artist` y `genre`
-  - Reemplazo con el string `'unknown'`
+### 1. Temporal Activity by City
+Custom functions were developed to filter playback volumes by day and location, revealing distinct consumption patterns.
 
-- **Eliminación de duplicados**:
-  - Tratamiento de duplicados explícitos (filas idénticas)
-  - Unificación de duplicados implícitos (ej: hip, hop → hiphop)
+### 2. Audience Segmentation
+Identified the most popular genres in each region to understand the cultural identity of Springfield vs. Shelbyville users.
 
-### 3. Prueba de hipótesis
-- Comparación del número total de canciones reproducidas por ciudad
-- Análisis de actividad por días específicos (lunes, miércoles, viernes)
-- Comparación de:
-  - Volumen de reproducciones
-  - Tendencias diarias
-  - Diferencias entre ciudades
+## 📈 Key Insights
+* **Volume Dominance:** Springfield exhibits a more active user base with clear activity peaks on Mondays and Fridays.
+* **Mid-week "Valley" Pattern:** Both cities show a significant decrease in engagement during mid-week (Wednesday).
+* **Hypothesis Validation:** The study confirmed that location and temporal factors are key predictors of user engagement.
 
-## Conclusiones Principales
-Los resultados del análisis confirmaron la hipótesis inicial:
-
-- **Disparidad de actividad**:
-  - Springfield muestra mayor volumen de reproducciones que Shelbyville
-
-- **Variación diaria**:
-  - Picos de actividad: lunes y viernes
-  - Descenso de actividad: mitad de semana
-
-- **Confirmación de hipótesis**:
-  - El consumo musical difiere entre ciudades
-  - Varía significativamente según el día de la semana
-
-## Tecnologías Utilizadas
-- **Python** (lenguaje principal)
-- **Pandas** (biblioteca para análisis y manipulación de datos)
+## 💡 Data Impact
+This analytical pipeline enables streaming platforms to optimize recommendation algorithms and schedule content releases during high-traffic days to maximize reach and user retention.
